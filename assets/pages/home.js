@@ -31,7 +31,7 @@ const Home = ({ navigation }) => {
           <TouchableOpacity style={styles.iconButton}>
             <Ionicons name="notifications" size={24} color="#333" />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.iconButton}>
+          <TouchableOpacity style={styles.iconButton} onPress={() => navigation.navigate('Profile')}>
             <Image source={require('../img/6.jpg')} style={styles.avatar} />
           </TouchableOpacity>
         </View>
@@ -64,28 +64,27 @@ const Home = ({ navigation }) => {
 
       {/* Footer */}
       <ScrollView contentContainerStyle={styles.footer}>
-      <TouchableOpacity style={styles.footerItem} onPress={() => navigation.navigate('Home')}>
-        <Ionicons name="home" size={24} color="#007BFF" />
-        <Text style={styles.footerText}>Home</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.footerItem} onPress={() => navigation.navigate('Rent')}>
-        <Ionicons name="bicycle" size={24} color="#007BFF" />
-        <Text style={styles.footerText}>Rent</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.footerItem} onPress={() => navigation.navigate('Map')}>
-        <Ionicons name="map" size={24} color="#007BFF" />
-        <Text style={styles.footerText}>Map</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.footerItem} onPress={() => navigation.navigate('Tips')}>
-        <Ionicons name="bulb" size={24} color="#007BFF" />
-        <Text style={styles.footerText}>Tips</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.footerItem} onPress={() => navigation.navigate('Guides')}>
-        <Ionicons name="book" size={24} color="#007BFF" />
-        <Text style={styles.footerText}>Guides</Text>
-      </TouchableOpacity>
-    </ScrollView>
-
+        <TouchableOpacity style={styles.footerItem} onPress={() => navigation.navigate('Home')}>
+          <Ionicons name="home" size={24} color="#007BFF" />
+          <Text style={styles.footerText}>Home</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.footerItem} onPress={() => navigation.navigate('Rent')}>
+          <Ionicons name="bicycle" size={24} color="#007BFF" />
+          <Text style={styles.footerText}>Rent</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.footerItem} onPress={() => navigation.navigate('Map')}>
+          <Ionicons name="map" size={24} color="#007BFF" />
+          <Text style={styles.footerText}>Map</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.footerItem} onPress={() => navigation.navigate('Tips')}>
+          <Ionicons name="bulb" size={24} color="#007BFF" />
+          <Text style={styles.footerText}>Tips</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.footerItem} onPress={() => navigation.navigate('Guides')}>
+          <Ionicons name="book" size={24} color="#007BFF" />
+          <Text style={styles.footerText}>Guides</Text>
+        </TouchableOpacity>
+      </ScrollView>
     </View>
   );
 };
