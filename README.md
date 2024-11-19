@@ -1,1 +1,1 @@
-For Recovery code
+For Register code
