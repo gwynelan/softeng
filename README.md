@@ -1,1 +1,1 @@
-For Slider code
+For Welcome code
