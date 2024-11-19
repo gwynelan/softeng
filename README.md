@@ -1,1 +1,1 @@
-Map Feature
+For Renter's bike navigation
