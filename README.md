@@ -1,1 +1,1 @@
-For Accesories feature
+For Accessories feature
