@@ -1,1 +1,1 @@
-For Homepage code
+For Safety and Maintenance Tips feature
