@@ -1,1 +1,1 @@
-For Welcome code
+For Guides and Tutorials feature
