@@ -1,1 +1,1 @@
-For Hompage code
+For Homepage code
