@@ -1,1 +1,1 @@
-For Accessories feature
+For Hompage code
