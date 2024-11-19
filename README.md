@@ -1,1 +1,1 @@
-For Register code
+For Slider code
