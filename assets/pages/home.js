@@ -102,9 +102,12 @@ export default function HomeScreen({ navigation }) {
     <TouchableOpacity style={styles.serviceItem}>
       <Text style={styles.serviceText}>Hybrid Bike</Text>
     </TouchableOpacity>
-    <TouchableOpacity style={styles.serviceItem}>
-      <Text style={styles.serviceText}>Accessories</Text>
-    </TouchableOpacity>
+    <TouchableOpacity
+              style={styles.serviceItem}
+              onPress={() => navigation.navigate('Accessories')} // Navigate to Accessories screen
+            >
+              <Text style={styles.serviceText}>Accessories</Text>
+            </TouchableOpacity>
   </View>
 </View>
 
@@ -163,7 +166,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginTop: 5,
+    marginTop: 30,
   },
   logoImage: { width: 40, height: 20 },
   rightIcons: { flexDirection: 'row' },

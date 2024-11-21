@@ -2,33 +2,23 @@ import React from 'react';
 import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-// Import the local image
-import snackIcon from './assets/snack-icon.png';
-
 const accessoriesData = [
-  { id: '1', name: 'Wheels', price: '₱50', image: snackIcon },
-  { id: '2', name: 'Gear', price: '₱50', image: snackIcon },
-  { id: '3', name: 'Bike Helmet', price: '₱35', image: snackIcon },
-  { id: '4', name: 'Bike Lights', price: '₱35', image: snackIcon },
-  { id: '5', name: 'Locks', price: '₱35', image: snackIcon },
-  { id: '6', name: 'Bearing', price: '₱35', image: snackIcon },
-  { id: '7', name: 'Saddle Bag', price: '₱40', image: snackIcon },
-  { id: '8', name: 'Water Bottle Holder', price: '₱20', image: snackIcon },
-  { id: '9', name: 'Chain Lubricant', price: '₱15', image: snackIcon },
-  { id: '10', name: 'Bell', price: '₱10', image: snackIcon },
+  { id: '1', name: 'Wheels', price: '₱50', image: require('../../img/6.jpg'), navigateTo: 'AccessoryDetails' },
+  { id: '2', name: 'Gear', price: '₱50', image: require('../../img/6.jpg'), navigateTo: 'AccessoryDetails' },
+  { id: '3', name: 'Bike Helmet', price: '₱35', image: require('../../img/6.jpg'), navigateTo: 'AccessoryDetails' },
+  { id: '4', name: 'Bike Lights', price: '₱35', image: require('../../img/6.jpg'), navigateTo: 'AccessoryDetails' },
+  { id: '5', name: 'Locks', price: '₱35', image: require('../../img/6.jpg'), navigateTo: 'AccessoryDetails' },
+  { id: '6', name: 'Bearing', price: '₱35', image: require('../../img/6.jpg'), navigateTo: 'AccessoryDetails' },
+  { id: '7', name: 'Saddle Bag', price: '₱40', image: require('../../img/6.jpg'), navigateTo: 'AccessoryDetails' },
+  { id: '8', name: 'Water Bottle Holder', price: '₱20', image: require('../../img/6.jpg'), navigateTo: 'AccessoryDetails' },
+  { id: '9', name: 'Chain Lubricant', price: '₱15', image: require('../../img/6.jpg'), navigateTo: 'AccessoryDetails' },
+  { id: '10', name: 'Bell', price: '₱10', image: require('../../img/6.jpg'), navigateTo: 'AccessoryDetails' },
+
 ];
 
 const Accessories = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      {/* Header with Back Button */}
-      <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
-          <Ionicons name="arrow-back" size={24} color="#333" />
-        </TouchableOpacity>
-        <Text style={styles.title}>Accessories</Text>
-      </View>
-
       {/* Scrollable Accessories List */}
       <ScrollView contentContainerStyle={styles.grid}>
         {accessoriesData.map((item) => (
@@ -37,6 +27,7 @@ const Accessories = ({ navigation }) => {
             name={item.name}
             price={item.price}
             image={item.image}
+            onPress={() => item.navigateTo && navigation.navigate(item.navigateTo)} // Navigation logic
           />
         ))}
       </ScrollView>
@@ -44,15 +35,15 @@ const Accessories = ({ navigation }) => {
   );
 };
 
-const AccessoryItem = ({ name, price, image }) => {
+const AccessoryItem = ({ name, price, image, onPress }) => {
   return (
-    <View style={styles.card}>
+    <TouchableOpacity style={styles.card} onPress={onPress}> {/* Wrap the item in TouchableOpacity */}
       <Image source={image} style={styles.image} />
       <View style={styles.infoContainer}>
         <Text style={styles.itemName}>{name}</Text>
         <Text style={styles.itemPrice}>{price}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -63,7 +54,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#f9f9f9',
     padding: 16,
-    paddingTop: 70,
   },
   header: {
     flexDirection: 'row',

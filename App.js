@@ -1,33 +1,37 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Login from './assets/pages/login'; // Adjust path if necessary
-import Register from './assets/pages/register'; // Adjust path if necessary
-import Welcome from './assets/pages/welcome'; // Make sure the path is correct
-import Home from './assets/pages/home'; // Import the Home screen
-import UserMap from './assets/pages/map/map'; // Import the Map screen
-import Rent from './assets/pages/rent/rent'; // Import the Rent screen
-import CityBikes from './assets/pages/rent/citybike'; // Import the CityBikes screen
+
+// Import necessary screens
+import Login from './assets/pages/login';
+import Register from './assets/pages/register';
+import Welcome from './assets/pages/welcome';
+import Home from './assets/pages/home';
+import UserMap from './assets/pages/map/map';
+import Rent from './assets/pages/rent/rent';
+import CityBikes from './assets/pages/rent/citybike';
 import MountainBikes from './assets/pages/rent/mountainbike';
 import HybridBikes from './assets/pages/rent/hybridbike';
-import Tips from './assets/pages/tips/tips';  // Import Tips page
-import SafetyTips from './assets/pages/tips/safetytips';  // Import SafetyTips page
-import MaintenanceTips from './assets/pages/tips/maintenancetips';  // Import MaintenanceTips page
-import Guide from './assets/pages/guides/guides'; // Import the Guide screen
-import Wheels from './assets/pages/guides/wheels'; // Import the Wheels screen
-import Handlebars from './assets/pages/guides/Handlebars'; // Import Handlebars screen
-import Brakes from './assets/pages/guides/Brakes'; // Import Brakes screen
-import Frame from './assets/pages/guides/Frame'; // Import Frame screen
-import Fork from './assets/pages/guides/Fork'; // Import Fork screen
-import Saddle from './assets/pages/guides/Saddle'; // Import Saddle screen
-import Drivetrain from './assets/pages/guides/Drivetrain'; // Import Drivetrain screen
-import Gears from './assets/pages/guides/Gears'; // Import Gears screen
-import Suspension from './assets/pages/guides/Suspension'; // Import Suspension screen
-import Accessories from './assets/pages/guides/Accessories'; // Import Accessories screen
-import Recovery from './assets/pages/recovery'; // Adjust path if necessary
-import Profile from './assets/pages/profile/profile'; // Adjust path if necessary
-import Notification from './assets/pages/notification/notification'; // Import Notification screen
-import BikeDetails from './assets/pages/rent/bikedetails'; // Import BikeDetails screen
+import Tips from './assets/pages/tips/tips';
+import SafetyTips from './assets/pages/tips/safetytips';
+import MaintenanceTips from './assets/pages/tips/maintenancetips';
+import Guide from './assets/pages/guides/guides';
+import Wheels from './assets/pages/guides/wheels';
+import Handlebars from './assets/pages/guides/Handlebars';
+import Brakes from './assets/pages/guides/Brakes';
+import Frame from './assets/pages/guides/Frame';
+import Fork from './assets/pages/guides/Fork';
+import Saddle from './assets/pages/guides/Saddle';
+import Drivetrain from './assets/pages/guides/Drivetrain';
+import Gears from './assets/pages/guides/Gears';
+import Suspension from './assets/pages/guides/Suspension';
+import Accessories from './assets/pages/Accessories/Accessories'; // Keep only one correct path
+import Recovery from './assets/pages/recovery';
+import Profile from './assets/pages/profile/profile';
+import Notification from './assets/pages/notification/notification';
+import BikeDetails from './assets/pages/rent/bikedetails';
+import Bearing from './assets/pages/Accessories/Bearing';
+
 
 const Stack = createStackNavigator();
 
@@ -38,55 +42,53 @@ export default function App() {
         <Stack.Screen
           name="Welcome"
           component={Welcome}
-          options={{ headerShown: false }} // Hides the header for Welcome screen
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="Login"
           component={Login}
           options={{
-            headerShown: true, // Shows the header for Login screen
-            headerTitleAlign: 'center', // Center the title
+            headerShown: true,
+            headerTitleAlign: 'center',
           }}
         />
         <Stack.Screen
           name="Register"
           component={Register}
-          options={{ headerShown: false }} // Hides the header for Register screen
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="Home"
           component={Home}
           options={{
-            headerShown: false, // Hides the header for Home screen
-            headerTitle: null,  // Removes the title text in the header
+            headerShown: false,
           }}
         />
         <Stack.Screen
           name="Profile"
-          component={Profile}  // Link to the Profile screen
+          component={Profile}
           options={{
-            title: 'Profile',  // Title for the Profile screen
-            headerShown: true,  // Show header
-            headerTitleAlign: 'center', // Center the title
+            title: 'Profile',
+            headerShown: true,
+            headerTitleAlign: 'center',
           }}
         />
         <Stack.Screen
           name="Recovery"
-          component={Recovery}  // Link to the Profile screen
+          component={Recovery}
           options={{
-            title: 'Recovery',  // Title for the Profile screen
-            headerShown: true,  // Show header
-            headerTitleAlign: 'center', // Center the title
+            title: 'Recovery',
+            headerShown: true,
+            headerTitleAlign: 'center',
           }}
         />
-        {/* Rent screen with centered title */}
         <Stack.Screen
           name="Rent"
           component={Rent}
           options={{
-            title: 'Select Your Category', // Title for the Rent screen
+            title: 'Select Your Category',
             headerShown: true,
-            headerTitleAlign: 'center', // Center the title
+            headerTitleAlign: 'center',
           }}
         />
         <Stack.Screen
@@ -102,185 +104,171 @@ export default function App() {
           name="Notification"
           component={Notification}
           options={{
-            title: 'Notifications', // Title for the Notification screen
-            headerShown: true, // Show header
-            headerTitleAlign: 'center', // Center the title
+            title: 'Notifications',
+            headerShown: true,
+            headerTitleAlign: 'center',
           }}
         />
-        {/* CityBikes screen with centered title */}
         <Stack.Screen
           name="CityBikes"
           component={CityBikes}
           options={{
-            title: 'City Bikes',  // Title for the CityBikes screen
-            headerShown: true,  // Show header
-            headerTitleAlign: 'center', // Center the title
+            title: 'City Bikes',
+            headerShown: true,
+            headerTitleAlign: 'center',
           }}
         />
         <Stack.Screen
           name="MountainBikes"
           component={MountainBikes}
           options={{
-            title: 'Mountain Bikes',  // Title for the MountainBikes screen
-            headerShown: true,  // Show header
-            headerTitleAlign: 'center', // Center the title
+            title: 'Mountain Bikes',
+            headerShown: true,
+            headerTitleAlign: 'center',
           }}
         />
         <Stack.Screen
           name="HybridBikes"
           component={HybridBikes}
           options={{
-            title: 'Hybrid Bikes',  // Title for the HybridBikes screen
-            headerShown: true,  // Show header
-            headerTitleAlign: 'center', // Center the title
+            title: 'Hybrid Bikes',
+            headerShown: true,
+            headerTitleAlign: 'center',
           }}
         />
-        {/* Map screen with centered title */}
         <Stack.Screen
           name="Map"
           component={UserMap}
           options={{
-            title: 'Map',  // Title for the Map screen
-            headerShown: true,  // If you want a header on the map screen
-            headerTitleAlign: 'center', // Center the title
+            title: 'Map',
+            headerShown: true,
+            headerTitleAlign: 'center',
           }}
         />
-        {/* Tips Screen with centered title */}
         <Stack.Screen
           name="Tips"
           component={Tips}
           options={{
-            title: 'Safety & Maintenance Tips',  // Title for the Tips screen
-            headerShown: true,  // Show header
-            headerTitleAlign: 'center', // Center the title
+            title: 'Safety & Maintenance Tips',
+            headerShown: true,
+            headerTitleAlign: 'center',
           }}
         />
-        {/* Wheels screen with centered title */}
         <Stack.Screen
           name="Wheels"
           component={Wheels}
           options={{
-            title: 'How to Fix a Wheel',  // Title for the Wheels screen
+            title: 'How to Fix a Wheel',
             headerShown: true,
-            headerTitleAlign: 'center', // Center the title
+            headerTitleAlign: 'center',
           }}
         />
-        {/* Brakes screen with centered title */}
         <Stack.Screen
           name="Brakes"
           component={Brakes}
           options={{
-            title: 'How to handle your Brakes',  // Title for the Brakes screen
+            title: 'How to handle your Brakes',
             headerShown: true,
-            headerTitleAlign: 'center', // Center the title
+            headerTitleAlign: 'center',
           }}
         />
         <Stack.Screen
           name="Handlebars"
           component={Handlebars}
           options={{
-            title: 'How to handle Handlebars',  // Title for the Brakes screen
+            title: 'How to handle Handlebars',
             headerShown: true,
-            headerTitleAlign: 'center', // Center the title
+            headerTitleAlign: 'center',
           }}
         />
-        {/* Frame screen with centered title */}
         <Stack.Screen
           name="Frame"
           component={Frame}
           options={{
-            title: 'Assembling your Frame',  // Title for the Frame screen
+            title: 'Assembling your Frame',
             headerShown: true,
-            headerTitleAlign: 'center', // Center the title
+            headerTitleAlign: 'center',
           }}
         />
-        {/* Fork screen with centered title */}
         <Stack.Screen
           name="Fork"
           component={Fork}
           options={{
-            title: 'Repairing your Fork',  // Title for the Fork screen
+            title: 'Repairing your Fork',
             headerShown: true,
-            headerTitleAlign: 'center', // Center the title
+            headerTitleAlign: 'center',
           }}
         />
-        {/* Saddle screen with centered title */}
         <Stack.Screen
           name="Saddle"
           component={Saddle}
           options={{
-            title: 'Adjusting your Saddle (Seat)',  // Title for the Saddle screen
+            title: 'Adjusting your Saddle (Seat)',
             headerShown: true,
-            headerTitleAlign: 'center', // Center the title
+            headerTitleAlign: 'center',
           }}
         />
-        {/* Drivetrain screen with centered title */}
         <Stack.Screen
           name="Drivetrain"
           component={Drivetrain}
           options={{
-            title: 'Upgrading your Drivetrain',  // Title for the Drivetrain screen
+            title: 'Upgrading your Drivetrain',
             headerShown: true,
-            headerTitleAlign: 'center', // Center the title
+            headerTitleAlign: 'center',
           }}
         />
-        {/* Gears screen with centered title */}
         <Stack.Screen
           name="Gears"
           component={Gears}
           options={{
-            title: 'Upgrading your Drivetrain',  // Title for the Gears screen
+            title: 'Upgrading your Gears',
             headerShown: true,
-            headerTitleAlign: 'center', // Center the title
+            headerTitleAlign: 'center',
           }}
         />
-        {/* Suspension screen with centered title */}
         <Stack.Screen
           name="Suspension"
           component={Suspension}
           options={{
-            title: 'Upgrading your Suspension',  // Title for the Suspension screen
+            title: 'Upgrading your Suspension',
             headerShown: true,
-            headerTitleAlign: 'center', // Center the title
+            headerTitleAlign: 'center',
           }}
         />
-        {/* Accessories screen with centered title */}
         <Stack.Screen
           name="Accessories"
           component={Accessories}
           options={{
-            title: 'Upgrading your Bicycle with Accessories',  // Title for the Accessories screen
+            title: 'Upgrading your Bicycle with Accessories',
             headerShown: true,
-            headerTitleAlign: 'center', // Center the title
+            headerTitleAlign: 'center',
           }}
         />
-        {/* Guides screen with centered title */}
         <Stack.Screen
           name="Guides"
           component={Guide}
           options={{
-            title: 'Guide & Tutorials',  // Title for the Guides screen
+            title: 'Guide & Tutorials',
             headerShown: true,
-            headerTitleAlign: 'center', // Center the title
+            headerTitleAlign: 'center',
           }}
         />
-        {/* Maintenance Tips screen with centered title */}
         <Stack.Screen
           name="MaintenanceTips"
           component={MaintenanceTips}
           options={{
-            title: 'Maintenance Tips',  // Title for the Maintenance Tips screen
+            title: 'Maintenance Tips',
             headerShown: true,
-            headerTitleAlign: 'center', // Center the title
+            headerTitleAlign: 'center',
           }}
         />
         <Stack.Screen
           name="SafetyTips"
           component={SafetyTips}
           options={{
-            title: 'Safety Tips',  // Title for the Maintenance Tips screen
+            title: 'Safety Tips',
             headerShown: true,
-            headerTitleAlign: 'center', // Center the title
+            headerTitleAlign: 'center',
           }}
         />
       </Stack.Navigator>
