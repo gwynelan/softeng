@@ -3,6 +3,7 @@ const mysql = require("mysql2");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const bcrypt = require("bcrypt");
+const nodemailer = require("nodemailer");
 
 const app = express();
 const port = 3001;
@@ -17,7 +18,7 @@ app.use(bodyParser.json());
 const db = mysql.createConnection({
   host: "localhost",
   user: "root", // Your MySQL username
-  password: "mysql123", // Your MySQL password
+  password: "butlayustp", // Your MySQL password
   database: "bikershub_db", // Database name
 });
 
@@ -104,6 +105,40 @@ app.post("/rent", async (req, res) => {
     res.status(500).json({ message: "Failed to rent bike" });
   }
 });
+
+const multer = require("multer");
+const path = require("path");
+
+// Configure storage for avatar uploads
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "uploads/avatars"); // Directory to store uploaded avatars
+  },
+  filename: (req, file, cb) => {
+    cb(null, `${Date.now()}-${file.originalname}`);
+  },
+});
+
+const upload = multer({ storage });
+
+// Update user profile route
+app.post("/update-profile", upload.single("avatar"), async (req, res) => {
+  const { id, fullName, email, phone } = req.body;
+  const avatarPath = req.file ? `/uploads/avatars/${req.file.filename}` : null;
+
+  try {
+    // Update user data in the database
+    const query =
+      "UPDATE register SET full_name = ?, email = ?, phone = ?, avatar = ? WHERE id = ?";
+    await db.promise().query(query, [fullName, email, phone, avatarPath, id]);
+
+    res.status(200).json({ message: "Profile updated successfully", avatarPath });
+  } catch (err) {
+    console.error("Error updating profile:", err);
+    res.status(500).json({ error: "Profile update failed" });
+  }
+});
+
 
 
 
