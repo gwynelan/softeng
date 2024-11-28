@@ -11,7 +11,7 @@ export default function Login({ navigation }) {
   const handleLogin = async () => {
     if (username && password) {
       try {
-        const response = await axios.post('http://192.168.1.9:3001/login', {
+        const response = await axios.post('http://192.168.87.15:3001/login', {
           email: username, // Assuming `username` is the email
           password,
         });
@@ -25,7 +25,7 @@ export default function Login({ navigation }) {
         Alert.alert("Error", errorMessage);
       }
     } else {
-      Alert.alert("Error", "Please enter both username and password.");
+      Alert.alert("Error", "Please enter both email and password.");
     }
   };
   
@@ -49,7 +49,7 @@ export default function Login({ navigation }) {
         <Text style={styles.text}>BikersHub</Text>
         <TextInput
           style={styles.input}
-          placeholder="Username"
+          placeholder="Email"
           placeholderTextColor="black"
           value={username}
           onChangeText={setUsername}
