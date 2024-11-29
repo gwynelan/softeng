@@ -113,7 +113,7 @@ export default function HomeScreen({ navigation }) {
     </TouchableOpacity>
     <TouchableOpacity
       style={styles.serviceItem}
-      onPress={() => navigation.navigate('BikeAccessories')}
+      onPress={() => navigation.navigate('Accessories')}
     >
       <Text style={styles.serviceText}>Accessories</Text>
     </TouchableOpacity>

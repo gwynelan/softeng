@@ -65,7 +65,7 @@ const Register = ({ navigation }) => {
   const handleRegister = async () => {
     if (validateForm()) {
       try {
-        const response = await axios.post("http://192.168.87.15:3001/register", {
+        const response = await axios.post("http://10.0.0.38:3001/register", {
           fullName: form.fullName,
           email: form.email,
           password: form.password,
