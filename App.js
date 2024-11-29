@@ -292,7 +292,7 @@ export default function App() {
             headerShown: true,
             headerTitleAlign: 'center', // Center the title
           }}
-        />
+        />  
          <Stack.Screen
           name="BikeAccessories"
           component={BikeAccessories}
